@@ -36,29 +36,53 @@
     </div>
   </header>
 
-  <div class="catalog">
-    <div class="container">
-      <ul class="catalog__list">
-        <li class="catalog__item"><a href="#" class="catalog__link">Все</a></li>
-        <li class="catalog__item"><a href="#" class="catalog__link">Лыжи</a></li>
-        <li class="catalog__item"><a href="#" class="catalog__link">Сноуборды</a></li>
-        <li class="catalog__item"><a href="#" class="catalog__link">Экипировка</a></li>
-        <li class="catalog__item"><a href="#" class="catalog__link">Ботинки</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="breadcrumb">
-    <div class="container">
-      <nav class="breadcrumb__navigation">
-        <ul class="breadcrumb__list">
-          <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Главная</a></li>
-          <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Лыжи</a></li>
-          <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Горные лыжи</a></li>
+  <main>
+    <div class="catalog">
+      <div class="container">
+        <ul class="catalog__list">
+          <li class="catalog__item"><a href="#" class="catalog__link">Все</a></li>
+          <li class="catalog__item"><a href="#" class="catalog__link">Лыжи</a></li>
+          <li class="catalog__item"><a href="#" class="catalog__link">Сноуборды</a></li>
+          <li class="catalog__item"><a href="#" class="catalog__link">Экипировка</a></li>
+          <li class="catalog__item"><a href="#" class="catalog__link">Ботинки</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-  </div>
+
+    <div class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb__navigation">
+          <ul class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Главная</a></li>
+            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Лыжи</a></li>
+            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Горные лыжи</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <section class="goods">
+      <div class="container">
+        <h2 class="goods__title">Избранное</h2>
+        <ul class="goods__list">
+          <li class="goods__item">
+            <article class="goods__card card">
+              <a href="#" class="card__link">
+                <img src="/img/card-1.jpg" alt="" class="card__image">
+              </a>
+              <button class="card__like-button">
+                <img src="/img/heart.svg" alt="">
+              </button>
+              <h3 class="card__title">Горные лыжи</h3>
+              <p class="card__price">5000 Р</p>
+              <button class="card__button">В корзину</button>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
 
   <script type="module" src="/src/main.js"></script>
 </body>
