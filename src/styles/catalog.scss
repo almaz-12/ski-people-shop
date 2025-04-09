@@ -1,0 +1,35 @@
+.catalog {
+    overflow-x: hidden; //  чтоб не было скролла(меню будет уезжать за экран)
+    padding-bottom: 20px;
+
+    @media (min-width: 768px) {
+        padding-bottom: 32px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-bottom: 40px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 4px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        display: block;
+        align-content: center;
+        padding: 11px 14px 13px;
+        border-radius: 32px;
+        color: #969eae;
+        background-color: #eeeff2;
+
+        &--active{
+            color: #ffffff;
+            background-color: #0044f0;
+
+        }
+    }
+}

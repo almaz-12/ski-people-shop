@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-display: swap; // чтоб шрифт был предзагружен
+    src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-display: swap; // чтоб шрифт был предзагружен
+    src: url('/fonts/Inter.woff2') format('woff2'); // отсчет от /public
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Inter-Black.woff2') format('woff2');
+}
