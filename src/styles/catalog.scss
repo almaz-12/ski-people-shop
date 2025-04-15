@@ -1,14 +1,7 @@
 .catalog {
     overflow-x: hidden; //  чтоб не было скролла(меню будет уезжать за экран)
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 
-    @media (min-width: 768px) {
-        padding-bottom: 32px;
-    }
-
-    @media (min-width: 1440px) {
-        padding-bottom: 40px;
-    }
 
     &__list {
         display: flex;

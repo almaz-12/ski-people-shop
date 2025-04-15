@@ -7,25 +7,27 @@ import { product } from '../components/product';
 import { getData } from './api';
 import { footer } from '../components/footer';
 
-const router = new Navigo('/', {linksSelector: 'a[href^="/"]'});
+const router = new Navigo('/', { linksSelector: 'a[href^="/"]' });
 
 export const initRouter = () => {
   router.on({
     '/': async () => { 
       const data = await getData();
       header();
+      catalog(main(), data);
       productList('Список товаров', data, main());
       footer();
-    },
-    '/product': () => { 
-      document.body.append(
-        header(),
-        main(product('Горные лыжи')),
-        footer(),
-      )
+    },  
+    '/favorite': async () => { 
+      const data = await getData();
+      header();
+      catalog(main(), data);
+      productList('Список товаров1', data, main());
+      footer();
     },    
   }).notFound(function () {
-    console.log('Not found');
+    document.body.innerHTML = `Такой страницы не существует`;
+    console.log('404');
   }).resolve();
 
 }

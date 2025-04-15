@@ -1,4 +1,5 @@
 import  { layout } from './layout';
+import renderProductList from '../js/renderProductList';
 
 export const productList = (title, data, parent) => {
   if(document.querySelector('.goods')) return ''; 
@@ -17,37 +18,36 @@ export const productList = (title, data, parent) => {
   const ul = document.querySelector(".goods__list");
 
   if(data && data.length) {    
-    const fragment = document.createDocumentFragment();
+    const template = renderProductList(data);
   
-    data.forEach(({ id, manufacturer, price }) => {
-      const li = document.createElement("li");
-      li.classList = 'goods__item';
-      li.innerHTML = `<article class="goods__card card">
-          <a class="card__link" href="/product/${id}">
-            <img class="card__img" src="/img/photo.png" alt="${manufacturer}">
-          </a>
-          <button class="card__like-button" type="button">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8.41301 13.8733C8.18634 13.9533 7.81301 13.9533 7.58634 13.8733C5.65301 13.2133 1.33301 10.46 1.33301 5.79332C1.33301 3.73332 2.99301 2.06665 5.03967 2.06665C6.25301 2.06665 7.32634 2.65332 7.99967 3.55998C8.67301 2.65332 9.75301 2.06665 10.9597 2.06665C13.0063 2.06665 14.6663 3.73332 14.6663 5.79332C14.6663 10.46 10.3463 13.2133 8.41301 13.8733Z"
-                fill="white" stroke="#1C1C1C" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <div class="card__info">
-            <h3 class="card__info-title">${manufacturer}</h3>
-            <p class="card__info-price">${price}</p>
-          </div>
-
-          <button class="card__button"> В корзину </button>
-        </article>`;
-      fragment.appendChild(li);
-    });
-  
-    ul.append(fragment);
+    ul.append(template);
   } else {
     ul.append('Товары закончились');
   }
+
+  const links = document.querySelectorAll('.catalog__link');
+  if(links.length > 0) {
+    links.forEach(link => {
+
+      link.addEventListener('click', function(e) {
+        console.log('click');
+        e.preventDefault();      
+        
+        links.forEach(link => link.classList.remove('catalog__link--active'));
+        
+        this.classList.add('catalog__link--active');
+
+        console.log(e.target.textContent);
+
+        const filteredData = (e.target.textContent === 'Все') ? data : data.filter(item => item.type === e.target.textContent);
+        const filteredTemplate = renderProductList(filteredData);
+  
+        ul.textContent = '';
+        ul.append(filteredTemplate);
+      });
+    });
+  }
+
   
   return el;
 }
