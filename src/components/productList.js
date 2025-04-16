@@ -1,8 +1,11 @@
 import  { layout } from './layout';
 import renderProductList from '../js/renderProductList';
 
+import { addFavorite } from '../js/addFavorite';
+
 export const productList = (title, data, parent) => {
-  if(document.querySelector('.goods')) return ''; 
+
+  if(document.querySelector('.goods')) document.querySelector('.goods').remove(); 
 
   const el = document.createElement('section');
   el.classList.add('goods');
@@ -47,6 +50,8 @@ export const productList = (title, data, parent) => {
       });
     });
   }
+
+  addFavorite(data);
 
   
   return el;
