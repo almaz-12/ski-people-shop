@@ -15,7 +15,7 @@ export const header = () => {
         <img class="header__logo-image" src="/img/logo.svg" alt="Логотип с изображением лыжника">
       </a>
 
-      <form class="header__search" action="#">
+      <form class="header__search" action="/search">
         <input class="header__search-input" type="search" name="search">
         <button class="header__search-button" type="submit">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

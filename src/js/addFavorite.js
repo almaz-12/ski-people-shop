@@ -3,7 +3,7 @@ import { localStorageAdd, localStorageLoad } from "./localStorage";
 export const addFavorite = async (data) => {
   let favoriteList = localStorageLoad('favorite'); 
 
-  const btns = document.querySelectorAll('.card__like-button');
+  const btns = document.querySelectorAll('.like-button');
 
   if(btns.length > 0) {
     btns.forEach(btn => {

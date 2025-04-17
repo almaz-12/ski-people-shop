@@ -1,6 +1,5 @@
 import  { layout } from './layout';
 import renderProductList from '../js/renderProductList';
-
 import { addFavorite } from '../js/addFavorite';
 
 export const productList = (title, data, parent) => {
@@ -52,7 +51,6 @@ export const productList = (title, data, parent) => {
   }
 
   addFavorite(data);
-
   
   return el;
 }

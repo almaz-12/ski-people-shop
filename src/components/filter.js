@@ -1,6 +1,6 @@
 import  { layout } from './layout';
 
-export const catalog = (parent, data = []) => {
+export const filter = (parent, data = []) => {
   if(document.querySelector('.catalog')) return ''; 
 
   const el = document.createElement('div');
