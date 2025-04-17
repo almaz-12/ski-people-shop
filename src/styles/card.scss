@@ -28,6 +28,13 @@
         position: absolute;
         top: 12px;
         right: 12px;
+
+        &-icon {
+            color: white;
+            &.active {
+                color: #0044f0;            
+            }
+        }
     }
 
     &__info {
