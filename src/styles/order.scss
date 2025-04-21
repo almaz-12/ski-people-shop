@@ -1,0 +1,100 @@
+.order {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  border: 1px solid #EEEFF2;
+  border-radius: 16px;
+  color: #1c1c1c;
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: 1.2;
+
+    @media (min-width: 768px) {
+      width: 408px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    font-size: 16px;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__info-title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__price {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__good-id {
+    min-width: 70px;
+    display: inline-block;
+
+    margin-bottom: 20px;
+    padding: 8px 9px;
+    border-radius: 32px;
+    background-color: #EEEFF2;
+    line-height: 14.4px;
+    text-align: center;
+  }
+
+  &__characteristics {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__info-title {
+    margin-bottom: 12px;
+  }
+
+  &__info-table {}
+
+  &__table-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #EEEFF2;
+  }
+
+
+  &__table-item {
+    padding: 8px 0;
+
+    &:first-child {
+      color: #969eae;
+    }
+  }
+
+  &__button {
+    max-width: 408px;
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #0044F0;
+    border: 1px solid #0044F0;
+    border-radius: 32px;
+    padding: 12px 24px;
+  }
+}

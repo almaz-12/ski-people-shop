@@ -1,8 +1,13 @@
-export const removeNode = (selector) => {
-  const node = document.querySelector(selector);
-  if(node) {
-    node.textContent = '';
-  }  
+export const removeNode = (selectors) => {
+  if(!selectors) return;
+
+  selectors.forEach(selector => {
+    const node = document.querySelector(selector);
+    console.log('node ',node);
+    if(node) {
+      node.textContent = '';
+    } 
+  });   
 }
 
 export const setTitle = (title) => {

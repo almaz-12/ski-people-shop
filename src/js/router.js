@@ -1,13 +1,14 @@
 import Navigo from 'navigo';
+import { getData, getDataByQuery } from './api';
+import { localStorageLoad } from './localStorage';
+import { removeNode, setTitle } from './helpers' 
+
 import { header } from '../components/header';
 import { main } from '../components/main';
 import { filter } from '../components/filter';
 import { productList } from '../components/productList';
 import { product } from '../components/product';
-import { getData, getDataByQuery } from './api';
-import { localStorageLoad } from './localStorage';
-import { removeNode, setTitle } from './helpers' 
-
+import { pagination } from "../components/pagination";
 import { footer } from '../components/footer';
 
 const router = new Navigo('/', { linksSelector: 'a[href^="/"]' });
@@ -16,7 +17,7 @@ export const initRouter = () => {
   
   router.hooks({
     leave(done, match) {
-      removeNode('main');
+      removeNode(['main','pagination']);
       done();
     }
   });
@@ -26,7 +27,8 @@ export const initRouter = () => {
       const data = await getData();
       header();
       filter(main(), data);
-      productList('Список товаров', data, main());
+      productList('Список товаров', data.slice(0, 12), main());
+      pagination(data, main());
       footer();
       router.updatePageLinks();
     }   

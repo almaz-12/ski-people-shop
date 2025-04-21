@@ -1,0 +1,302 @@
+.cart {
+  padding-top: 24px;
+
+  @media (min-width: 768px) {
+    padding-top: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 40px;
+  }
+
+
+
+  &__container {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'content'
+      'form'
+      'place'
+    ;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 302px; // 1-ый столбец  займет все оставшееся пространство
+      gap: 40px 30px;
+      grid-template-areas:
+        'title .'
+        'content place'
+        'form form'
+      ;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: 1fr 408px; // 1-ый столбец  займет все оставшееся пространство
+    }
+  }
+
+
+
+
+  &__title {
+    // грид элмент большой
+    grid-area: title;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+    }
+  }
+
+
+
+
+  &__products {
+    // грид элмент большой
+    grid-area: content;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: 1024px) {
+      order: 0;
+    }
+  }
+
+
+
+  &__product {
+    display: grid;
+    align-items: center;
+    gap: 4px 8px;
+    grid-template-columns: 80px min-content 1fr; // min-content (займет длину контента), 1fr (займет все оставшееся место)
+    grid-template-areas:
+      'img title title'
+      'img article article'
+      'img control price'
+    ;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 120px 1fr min-content; // min-content (займет длину контента), 1fr (займет все оставшееся место)
+      gap: 6px 12px;
+      grid-template-areas:
+        'img title price'
+        'img article .'
+        'img control .'
+      ;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 514px;
+    }
+  }
+
+
+  &__item-image {
+    // грид эл маленький
+    grid-area: img;
+    border-radius: 16px;
+  }
+
+
+  &__item-title {
+    // грид эл маленький
+    grid-area: title;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      padding-top: 12px;
+      font-size: 16px;
+
+    }
+  }
+
+
+  &__item-price {
+    // грид эл маленький
+    grid-area: price;
+    color: #1c1c1c;
+
+    @media (min-width: 768px) {
+      align-self: start;
+      justify-self: end;
+      padding-top: 12px;
+      font-size: 16px;
+    }
+  }
+
+
+  &__item-id {
+    // грид эл маленький
+    grid-area: article;
+    color: #969eae;
+    font-size: 9px;
+
+    @media (min-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+
+  .counter {
+    // грид эл маленький
+    grid-area: control;
+    justify-self: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 11px;
+    border-radius: 32px;
+    border: 1px solid #eeeff2;
+
+    @media (min-width: 768px) {
+      align-self: end;
+    }
+  }
+
+
+
+  &__order {
+    // грид эл большой
+    grid-area: place;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+
+    @media (min-width: 1024px) {
+      padding-top: 0;
+    }
+  }
+
+
+  &__order-title {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+
+
+  &__order-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+  }
+
+
+
+  &__order-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__order-count {}
+
+  &__order-price {}
+
+  &__order-delivery {
+    color: #969eae;
+    font-size: 9px;
+    margin-bottom: 8px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 12px;
+      font-size: 12px;
+
+    }
+  }
+
+
+
+  &__order-button {
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 32px;
+    border: 1px solid transparent;
+    background-color: #0044f0;
+    color: #fff;
+  }
+
+
+
+  &__form {
+    // грид элемент большой 
+    grid-area: form;
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    @media (min-width: 768px) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__form-title {}
+
+  &__form-inputs {}
+
+  &__form-input {}
+
+  &__form-fieldset {}
+
+  &__form-legend {}
+
+  &__form-label {}
+
+  &__form-radio {}
+}
+
+
+
+
+.input {
+
+  &__item-counter {}
+}
+
+.counter {
+
+  &__minus,
+  &__plus {
+    width: 14px;
+    height: 14px;
+    line-height: 12px;
+    border: 1px solid transparent;
+    outline: none;
+
+    &:focus-visible {
+      // border-color: 
+    }
+  }
+
+
+  &__number {
+    min-width: 14px;
+    text-align: center;
+  }
+
+
+}

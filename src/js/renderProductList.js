@@ -5,12 +5,12 @@ export default (data) => {
 
   const fragment = document.createDocumentFragment();
   
-  data.forEach(({ id, name, price, type }) => {
+  data.forEach(({ id, name, price, type, img }) => {
     const li = document.createElement("li");
     li.classList = 'goods__item';
     li.innerHTML = `<article class="goods__card card" data-type="${type}">
         <a class="card__link" href="/product/${id}">
-          <img class="card__img" src="/img/photo.png" alt="${name}">
+          <img class="card__img" src="/img${img}" alt="${name}">
         </a>
         <button class="card__like-button like-button" type="button" data-id="${id}">
           <svg class="card__like-button-icon ${favoriteList.find(item => item.id === id) ? 'active' : '' } " width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
