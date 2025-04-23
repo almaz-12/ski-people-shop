@@ -2,8 +2,10 @@ import Navigo from 'navigo';
 import { getData, getDataByQuery } from './api';
 import { localStorageLoad } from './localStorage';
 import { removeNode, setTitle } from './helpers' 
+import { BC_FAVORITE } from './const';
 
 import { header } from '../components/header';
+import { breadcrumbs } from '../components/breadcrumbs';
 import { main } from '../components/main';
 import { filter } from '../components/filter';
 import { productList } from '../components/productList';
@@ -38,6 +40,7 @@ export const initRouter = () => {
       setTitle('Товар'); 
       const data = await getData();
       header();
+      breadcrumbs(main(),BC_FAVORITE);
       product(main(), data);
       footer();
       router.updatePageLinks();
@@ -46,7 +49,8 @@ export const initRouter = () => {
 
   router.on('/favorite', async () => { 
       setTitle('Избранное');
-      header();
+      header();      
+      breadcrumbs(main(),BC_FAVORITE);
       productList('Избранное', localStorageLoad('favorite'), main());
       footer();
       router.updatePageLinks();

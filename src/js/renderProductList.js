@@ -4,7 +4,7 @@ export default (data) => {
   let favoriteList = localStorageLoad('favorite'); 
 
   const fragment = document.createDocumentFragment();
-  
+  console.log(data);
   data.forEach(({ id, name, price, type, img }) => {
     const li = document.createElement("li");
     li.classList = 'goods__item';

@@ -1,7 +1,26 @@
 .breadcrumb {
+  padding-top: 40px;
+
   &__list {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    color: #969eae;
+
+  }
+
+  &__item:not(:last-child) {
+    display: flex;
+    gap: 6px;
+
+    &::after {
+      content: '\003E';
+    }
+  }
+
+  &__link {
+    font-size: 12px;
+    line-height: 1.2;
+
   }
 }
